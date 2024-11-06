@@ -1,0 +1,22 @@
+#!ipxe
+###
+### netboot.xyz-custom menu example
+###
+
+:custom
+clear custom_choice
+menu Personal iPXE Deployments
+item --gap Distributions
+item option_aa ${space} - None Available -
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
+goto custom_exit
+
+:option_aa
+echo Returning to Main Menu
+sleep 3
+goto custom_exit
+
+:custom_exit
+exit
